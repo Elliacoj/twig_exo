@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Panel utilisateur {% endblock %}
+
+{% block content %}
+    <div class="add">
+        <a href="./index.php?controller=user&action=create" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+
+    <table class="striped centered">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>Alvin</td>
+            <td><a class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
+            <td><a class="waves-effect waves-light btn-small red lighten-1">-</a></td>
+        </tr>
+        <tr>
+            <td>Alan</td>
+            <td><a class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
+            <td><a class="waves-effect waves-light btn-small red lighten-1">-</a></td>
+        </tr>
+        <tr>
+            <td>Jonathan</td>
+            <td><a class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
+            <td><a class="waves-effect waves-light btn-small red lighten-1">-</a></td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

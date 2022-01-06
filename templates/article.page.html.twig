@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Panel article {% endblock %}
+
+{% block content %}
+    <div class="add">
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+
+    <table class="striped centered">
+        <thead>
+        <tr>
+            <th>Article</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>
+                <div class="col s12 m8 offset-m2 l6 offset-l3">
+                    <div class="card-panel grey lighten-5 z-depth-1">
+                        <div class="row valign-wrapper">
+                            <div class="col s2">
+                                <img src="images/default.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                            </div>
+                            <div class="col s10">
+              <span class="black-text">
+                Première article. Ceci est un fait divers banal.
+              </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td><a class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
+            <td><a class="waves-effect waves-light btn-small red lighten-1">-</a></td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+HTML {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+}
+
+
+nav span {
+    font-size: 2rem;
+    color: #607d8b;
+}
+
+nav > div > a > span {
+    font-size: 3rem;
+}
+
+table {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.add {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+}
+
+.input-field label {
+    font-size: 1.5rem;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    font-size: 1.5rem;
+}
+
+.addForm {
+    margin: 2rem auto;
+    width: 40%;
+}
+
+.addForm > form {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    text-decoration-line: underline;
+}
