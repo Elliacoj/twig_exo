@@ -51,7 +51,18 @@ table {
     width: 100%;
 }
 
+.browser-default {
+    height: 50px;
+}
+
 h2 {
     text-align: center;
     text-decoration-line: underline;
+}
+
+.deleteDiv {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 4rem auto;
 }

@@ -18,7 +18,7 @@ class UserManager extends Manager {
         $user = R::load('elliauser', $id);
 
         if(!is_null($user)) {
-            return new User($user->id, $user->username,$user->mail, $user->password);
+            return new User($user->id, $user->username, $user->password, $user->mail);
         }
         return null;
     }
@@ -36,6 +36,7 @@ class UserManager extends Manager {
             $table->username = $username;
             $table->mail = $mail;
             $table->password = password_hash($password, PASSWORD_BCRYPT);
+
             R::store($table);
             return true;
         }
@@ -57,5 +58,51 @@ class UserManager extends Manager {
                 return false;
             }
         }
+    }
+
+    /**
+     * Return array of all user
+     * @return array
+     */
+    public static function getAll():array {
+        $allUser = [];
+
+        $users = R::findAll("elliauser");
+
+        if(count($users) !== 0) {
+            foreach ($users as $user) {
+                $allUser[] = new User($user->id, $user->username, $user->password, $user->mail);
+            }
+        }
+        return $allUser;
+    }
+
+    /**
+     * Update information of user
+     * @param User $user
+     */
+    public static function update(User $user) {
+        $id = $user->getId();
+        $username = $user->getUsername();
+        $mail = $user->getMail();
+
+        $userUpdate = R::load("elliauser", $id);
+        $userUpdate->username = $username;
+        $userUpdate->mail = $mail;
+
+        try {
+            R::store($userUpdate);
+        }
+        catch (SQL $e) {}
+    }
+
+    /**
+     * Delete a user into user table
+     * @param $id
+     */
+    public static function deleteUser($id) {
+        $id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+
+        R::trash("elliauser", $id);
     }
 }

@@ -17,21 +17,13 @@
         </thead>
 
         <tbody>
-        <tr>
-            <td>Alvin</td>
-            <td><a class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
-            <td><a class="waves-effect waves-light btn-small red lighten-1">-</a></td>
-        </tr>
-        <tr>
-            <td>Alan</td>
-            <td><a class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
-            <td><a class="waves-effect waves-light btn-small red lighten-1">-</a></td>
-        </tr>
-        <tr>
-            <td>Jonathan</td>
-            <td><a class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
-            <td><a class="waves-effect waves-light btn-small red lighten-1">-</a></td>
-        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td><a href="./index.php?controller=user&action=update&id={{ user.id }}" class="waves-effect waves-light btn-small blue lighten-1">+</a></td>
+                <td><a href="./index.php?controller=user&action=delete&id={{ user.id }}" class="waves-effect waves-light btn-small red lighten-1">-</a></td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
 {% endblock %}
